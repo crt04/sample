@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.assurant.entity.loan;
+import com.assurant.entity.Loan;
 import com.assurant.services.TestTableService;
 
 
@@ -31,18 +31,18 @@ public class TestController {
 	
 	//utilizes path variable in url
 	@GetMapping("/findInfo/{id}")
-	public loan getInfo(@PathVariable("id") Integer id) throws Exception {
+	public Loan getInfo(@PathVariable("id") Integer id) throws Exception {
 		return testTableService.findInfo(id);
 	}
 	
 	@GetMapping(value = "/findAllInfo")
-	public Iterable<loan> getAllInfo() {
+	public Iterable<Loan> getAllInfo() {
 		return testTableService.findAllInfo();
 	}
 	
 	
 	@PostMapping(value = "/saveInfo", produces = MediaType.APPLICATION_JSON_VALUE)
-	public loan getInfo(@RequestBody loan testTable) throws Exception {
+	public Loan getInfo(@RequestBody Loan testTable) throws Exception {
 		return testTableService.saveInfo(testTable);
 	}
 	

@@ -1,14 +1,14 @@
 package com.assurant.services;
 
-import com.assurant.entity.loan;
+import com.assurant.entity.Loan;
 
 public interface TestTableService {
 	
-	public loan findInfo(Integer id);
+	public Loan findInfo(Integer id);
 	
-	public loan saveInfo(loan testTable);
+	public Loan saveInfo(Loan testTable);
 	
-	public Iterable<loan> findAllInfo();
+	public Iterable<Loan> findAllInfo();
 	
 	public void removeInfo(int idToBeRemoved);
 }

@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.Version;
 
 @Entity(name="loan")
-public class loan implements Serializable {
+public class Loan implements Serializable {
 
 
     @Id
@@ -24,7 +24,7 @@ public class loan implements Serializable {
     private String customerName;
 
     /** Default constructor. */
-    public loan() {
+    public Loan() {
         super();
     }
 
@@ -92,10 +92,10 @@ public class loan implements Serializable {
         if (this==other) {
             return true;
         }
-        if (!(other instanceof loan)) {
+        if (!(other instanceof Loan)) {
             return false;
         }
-        loan that = (loan) other;
+        Loan that = (Loan) other;
         if (this.getLoanNumber() != that.getLoanNumber()) {
             return false;
         }
@@ -110,8 +110,8 @@ public class loan implements Serializable {
      */
     @Override
     public boolean equals(Object other) {
-        if (!(other instanceof loan)) return false;
-        return this.equalKeys(other) && ((loan)other).equalKeys(this);
+        if (!(other instanceof Loan)) return false;
+        return this.equalKeys(other) && ((Loan)other).equalKeys(this);
     }
 
     /**
