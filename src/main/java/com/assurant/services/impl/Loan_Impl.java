@@ -4,15 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.assurant.entity.Loan;
-import com.assurant.services.TestTableRepository;
-import com.assurant.services.TestTableService;
+import com.assurant.services.LoanRepository;
+import com.assurant.services.LoanService;
 
 
 @Service
-public class TestTable_Impl implements TestTableService {
+public class Loan_Impl implements LoanService {
 	
 	@Autowired
-	TestTableRepository testTableRepository;
+	LoanRepository testTableRepository;
 	
 	
 	public Loan findInfo(Integer id) {

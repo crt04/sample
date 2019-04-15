@@ -12,16 +12,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.assurant.entity.Loan;
-import com.assurant.services.TestTableService;
+import com.assurant.services.LoanService;
 
 
 
 @RestController
 @RequestMapping("assurantTest")
-public class TestController {
+public class LoanController {
 	
 	@Autowired
-	TestTableService testTableService;	
+	LoanService testTableService;	
 	
 	//utilizes query param on url
 	@GetMapping("/returnString")

@@ -2,7 +2,7 @@ package com.assurant.services;
 
 import com.assurant.entity.Loan;
 
-public interface TestTableService {
+public interface LoanService {
 	
 	public Loan findInfo(Integer id);
 	
