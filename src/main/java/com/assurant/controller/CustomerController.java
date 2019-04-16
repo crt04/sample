@@ -10,17 +10,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.assurant.entity.Loan;
-import com.assurant.services.LoanService;
 
-
+import com.assurant.entity.Customer;
+import com.assurant.services.CustomerService;
 
 @RestController
-@RequestMapping("assurantTest/loan")
-public class LoanController {
-	
+@RequestMapping("assurantTest/customer")
+public class CustomerController {
+
 	@Autowired
-	LoanService testTableService;	
+	CustomerService customerService;	
 	
 	//utilizes query param on url
 	@GetMapping("/returnString")
@@ -30,24 +29,25 @@ public class LoanController {
 	
 	//utilizes path variable in url
 	@GetMapping("/findInfo/{id}")
-	public Loan getInfo(@PathVariable("id") Integer id) throws Exception {
-		return testTableService.findInfo(id);
+	public Customer getInfo(@PathVariable("id") Integer id) throws Exception {
+		return customerService.findInfo(id);
 	}
 	
 	@GetMapping(value = "/findAllInfo")
-	public Iterable<Loan> getAllInfo() {
-		return testTableService.findAllInfo();
+	public Iterable<Customer> getAllInfo() {
+		return customerService.findAllInfo();
 	}
 	
 	
 	@PostMapping(value = "/saveInfo", produces = MediaType.APPLICATION_JSON_VALUE)
-	public Loan getInfo(@RequestBody Loan testTable) throws Exception {
-		return testTableService.saveInfo(testTable);
+	public Customer getInfo(@RequestBody Customer customer) throws Exception {
+		return customerService.saveInfo(customer);
 	}
 	
 	@DeleteMapping(value = "/deleteInfo/{id}")
 	public void removeInfo(@PathVariable("id") int idToBeRmoved) {
-		testTableService.removeInfo(idToBeRmoved);
+		customerService.removeInfo(idToBeRmoved);
 	}
 
 }
+

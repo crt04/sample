@@ -14,33 +14,6 @@ import javax.persistence.Version;
 @Entity(name="customer")
 public class Customer implements Serializable {
 
-    /** Primary key. */
-    protected static final String PK = "loanNumber";
-
-    /**
-     * The optimistic lock. Available via standard bean get/set operations.
-     */
-    @Version
-    @Column(name="LOCK_FLAG")
-    private Integer lockFlag;
-
-    /**
-     * Access method for the lockFlag property.
-     *
-     * @return the current value of the lockFlag property
-     */
-    public Integer getLockFlag() {
-        return lockFlag;
-    }
-
-    /**
-     * Sets the value of the lockFlag property.
-     *
-     * @param aLockFlag the new value of the lockFlag property
-     */
-    public void setLockFlag(Integer aLockFlag) {
-        lockFlag = aLockFlag;
-    }
 
     @Id
     @Column(name="loan_number", unique=true, nullable=false, precision=10)
