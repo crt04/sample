@@ -18,7 +18,7 @@ public class SupportController {
 		int payrollCtr = 0;
 		
 		LocalDate lastPaidFromHD = LocalDate.of(2019, 04, 12);
-		LocalDate startDeductionFromAssurant = LocalDate.of(2019, 04, 01);
+		LocalDate startDeductionFromAssurant = LocalDate.of(2019, 04, 26);
 		LocalDate currentDate = LocalDate.now();
 		LocalDate  twoWeekIntervalFromStart = startDeductionFromAssurant.plusDays(14);
 		
@@ -30,8 +30,8 @@ public class SupportController {
 		
 		return "Your last payment via HomeDepot was on: " + lastPaidFromHD + " \nDeductions from Assurant should have started on: " + 
 				startDeductionFromAssurant + " \nThere has been " + payrollCtr + " pay periods to expire since start of deductions. " +
-				" \nYour total owed is: $" + 900 * payrollCtr + "\n66% is owed to Laronda at: " + 900 * payrollCtr * .63 + 
-				"\n33% is owed to Tiah at: " + 900 * payrollCtr * .37;
+				" \nYour total owed is: $" + 900 * payrollCtr + "\n63% is owed to Laronda at: " + 900 * payrollCtr * .63 + 
+				"\n37% is owed to Tiah at: " + 900 * payrollCtr * .37;
 	
 	}
 
