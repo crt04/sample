@@ -1,5 +1,8 @@
 package com.assurant.controller;
 
+import java.io.File;
+import java.io.FileFilter;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,11 +24,15 @@ public class CustomerController {
 	@Autowired
 	CustomerService customerService;	
 	
+		
 	//utilizes query param on url
 	@GetMapping("/returnString")
 	public String returnAString(@RequestParam("testString") String urlString){
 		return urlString;
 	}
+	
+
+	
 	
 	//utilizes path variable in url
 	@GetMapping("/findInfo/{id}")
