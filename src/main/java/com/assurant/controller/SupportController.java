@@ -1,6 +1,7 @@
 package com.assurant.controller;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,8 +29,12 @@ public class SupportController {
 			twoWeekIntervalFromStart = twoWeekIntervalFromStart.plusDays(14);
 		}
 		
-		return "Your last payment via HomeDepot was on: " + lastPaidFromHD + " \nDeductions from Assurant should have started on: " + 
-				shouldStartDedFromAssurant + " \nThere has been " + payrollCtr + " pay periods to expire since start of deductions. " +
+		DateTimeFormatter df = DateTimeFormatter.ofPattern("MM-dd-uuuu");
+		String lastPaidFromHDStr = lastPaidFromHD.format(df);
+		String shouldStartDedFromAssurantStr = shouldStartDedFromAssurant.format(df);
+		
+		return "Your last payment via HomeDepot was on: " + lastPaidFromHDStr + " \nDeductions from Assurant should have started on: " + 
+		shouldStartDedFromAssurantStr + " \nThere has been " + payrollCtr + " pay periods to expire since start of deductions. " +
 				" \nYour total owed is: $" + 900 * payrollCtr + "\n63% is owed to Laronda at: " + 900 * payrollCtr * .63 + 
 				"\n37% is owed to Tiah at: " + 900 * payrollCtr * .37;
 	
